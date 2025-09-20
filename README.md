@@ -1,73 +1,121 @@
-# Welcome to your Lovable project
+# 📊 EduTrack – Automated Student Attendance Monitoring & Analytics System
 
-## Project info
+## 📌 Problem Statement (SIH25016)
 
-**URL**: https://lovable.dev/projects/724f4bf8-143f-47ea-b34e-1ed15b9928fc
+**Title:** Automated Student Attendance Monitoring and Analytics System for Colleges  
+**Domain:** Smart Education  
+**Proposed by:** Government of Punjab
 
-## How can I edit this code?
+The problem statement requires developing a **smart system** that automates student attendance monitoring and provides **analytics dashboards** for institutions, teachers, and students.
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## 🚀 Solution Overview
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/724f4bf8-143f-47ea-b34e-1ed15b9928fc) and start prompting.
+**EduTrack** is a web + mobile-based application designed to:
 
-Changes made via Lovable will be committed automatically to this repo.
+* Automate attendance tracking using **digital logs / face recognition / QR codes**.
+* Provide **real-time analytics dashboards** for teachers, students, and administrators.
+* Minimize manual errors and save faculty time.
+* Enable data-driven insights for improving **student engagement**.
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🛠️ Features
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+* ✅ **Student Attendance Automation** (QR/Face Recognition/ID swipe support)
+* 📊 **Analytics Dashboard** (attendance trends, defaulter lists, reports)
+* 👩‍🏫 **Faculty Panel** (mark attendance, view class summaries)
+* 🎓 **Student Panel** (check personal attendance, alerts for shortage)
+* 🔔 **Notifications & Alerts** (SMS/Email/App notifications for low attendance)
+* ☁️ **Cloud-based & Scalable** (works for multiple colleges/institutions)
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🏗️ Tech Stack
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Frontend
 
-# Step 3: Install the necessary dependencies.
-npm i
+* HTML, CSS, JavaScript
+* React.js (for responsive dashboards)
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+### Backend
 
-**Edit a file directly in GitHub**
+* Node.js / Java / Python Flask (depending on implementation)
+* REST APIs for communication
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Database
 
-**Use GitHub Codespaces**
+* MySQL (student records & attendance logs)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Additional Integrations
 
-## What technologies are used for this project?
+* Face Recognition (OpenCV, Deep Learning models)
+* QR Code / RFID based scanning system
+* Cloud Hosting (AWS / Azure / GCP)
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 📊 Architecture (High-Level)
 
-## How can I deploy this project?
+1. **Data Collection Layer** → Attendance captured via QR / Face Recognition / RFID.
+2. **Backend API Layer** → Processes attendance data, stores in DB.
+3. **Database Layer** → Stores student profiles, attendance logs, analytics data.
+4. **Frontend Dashboard** → Displays analytics & insights to stakeholders.
 
-Simply open [Lovable](https://lovable.dev/projects/724f4bf8-143f-47ea-b34e-1ed15b9928fc) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+## 🧑‍🤝‍🧑 Target Users
 
-Yes, you can!
+* **Students** → Track attendance & get alerts.
+* **Faculty** → Simplify attendance marking & reporting.
+* **Administration** → Monitor trends, generate reports, ensure compliance.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 📈 Expected Impact
+
+* 📉 **90% reduction** in manual effort for attendance tracking.
+* ⏱️ **Real-time insights** into class engagement.
+* 🎯 **Data-driven decision-making** for academic performance monitoring.
+
+---
+
+## 🚀 Future Scope
+
+* Integration with **LMS (Learning Management Systems)**.
+* AI-powered **student engagement prediction models**.
+* Mobile app with **offline attendance sync**.
+
+---
+
+## 👨‍💻 Team
+
+## 👨‍💻 Team
+
+**🚀 Team Name: Quantum Coders**
+**👥 Members:**
+
+**ASTA91-GIT**
+
+**Tanishk672006**
+
+**Purva2907**
+
+**Sakshi-kosbe**
+
+**swanandmuddewad**
+
+**sahilparte89**
+
+---
+
+## 📌 Status
+
+🔨 Currently in **prototype / development stage** for SIH 2025.
+
+---
+
+## 📜 License
+
+This project is developed under **Smart India Hackathon 2025** guidelines.
