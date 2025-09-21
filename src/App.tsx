@@ -9,6 +9,11 @@ import AuthPage from "./components/auth/AuthPage";
 import StudentDashboard from "./pages/StudentDashboard";
 import TeacherDashboard from "./pages/TeacherDashboard";
 import QRScannerPage from "./pages/QRScannerPage";
+import StudentFeesPage from "./pages/student/StudentFeesPage";
+import StudentAssignmentsPage from "./pages/student/StudentAssignmentsPage";
+import StudentGradesPage from "./pages/student/StudentGradesPage";
+import StudentLibraryPage from "./pages/student/StudentLibraryPage";
+import StudentTimetablePage from "./pages/student/StudentTimetablePage";
 import DashboardLayout from "./components/layout/DashboardLayout";
 import { useAuth } from "./hooks/useAuth";
 
@@ -52,6 +57,11 @@ function AppContent() {
         
         {/* Student Routes */}
         <Route path="/student" element={<StudentDashboard />} />
+        <Route path="/student/fees" element={<StudentFeesPage />} />
+        <Route path="/student/assignments" element={<StudentAssignmentsPage />} />
+        <Route path="/student/grades" element={<StudentGradesPage />} />
+        <Route path="/student/timetable" element={<StudentTimetablePage />} />
+        <Route path="/student/library" element={<StudentLibraryPage />} />
         <Route path="/student/scanner" element={<QRScannerPage />} />
         <Route path="/student/attendance" element={<StudentDashboard />} />
         

@@ -24,28 +24,61 @@ import {
   Settings,
   LogOut,
   Shield,
-  BookOpen
+  BookOpen,
+  CreditCard,
+  FileText,
+  Award,
+  Bus,
+  MessageSquare,
+  HelpCircle,
+  ClipboardList,
+  UserCheck,
+  FileBarChart,
+  Megaphone,
+  Library
 } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 
 const studentItems = [
   { title: 'Dashboard', url: '/student', icon: BarChart3 },
+  { title: 'Fees', url: '/student/fees', icon: CreditCard },
+  { title: 'Assignments', url: '/student/assignments', icon: FileText },
+  { title: 'Grades', url: '/student/grades', icon: Award },
+  { title: 'Timetable', url: '/student/timetable', icon: Calendar },
+  { title: 'Library', url: '/student/library', icon: BookOpen },
+  { title: 'Transport', url: '/student/transport', icon: Bus },
+  { title: 'Clubs', url: '/student/clubs', icon: Users },
+  { title: 'Messages', url: '/student/messages', icon: MessageSquare },
+  { title: 'Support', url: '/student/support', icon: HelpCircle },
   { title: 'QR Scanner', url: '/student/scanner', icon: QrCode },
-  { title: 'My Attendance', url: '/student/attendance', icon: Calendar },
 ];
 
 const teacherItems = [
   { title: 'Dashboard', url: '/teacher', icon: BarChart3 },
-  { title: 'Create Session', url: '/teacher/create-session', icon: QrCode },
-  { title: 'My Classes', url: '/teacher/classes', icon: BookOpen },
-  { title: 'Attendance Records', url: '/teacher/attendance', icon: Calendar },
+  { title: 'Classes', url: '/teacher/classes', icon: BookOpen },
+  { title: 'Assignments', url: '/teacher/assignments', icon: FileText },
+  { title: 'Grades', url: '/teacher/grades', icon: Award },
+  { title: 'Tests', url: '/teacher/tests', icon: ClipboardList },
+  { title: 'Attendance', url: '/teacher/attendance', icon: UserCheck },
+  { title: 'Timetable', url: '/teacher/timetable', icon: Calendar },
+  { title: 'Messages', url: '/teacher/messages', icon: MessageSquare },
+  { title: 'Reports', url: '/teacher/reports', icon: FileBarChart },
+  { title: 'QR Session', url: '/teacher/qr-session', icon: QrCode },
 ];
 
 const adminItems = [
   { title: 'Dashboard', url: '/admin', icon: BarChart3 },
   { title: 'User Management', url: '/admin/users', icon: Users },
-  { title: 'Class Management', url: '/admin/classes', icon: BookOpen },
-  { title: 'Reports', url: '/admin/reports', icon: Calendar },
+  { title: 'Classes', url: '/admin/classes', icon: BookOpen },
+  { title: 'Subjects', url: '/admin/subjects', icon: GraduationCap },
+  { title: 'Fees', url: '/admin/fees', icon: CreditCard },
+  { title: 'Events', url: '/admin/events', icon: Calendar },
+  { title: 'Announcements', url: '/admin/announcements', icon: Megaphone },
+  { title: 'Library', url: '/admin/library', icon: Library },
+  { title: 'Transport', url: '/admin/transport', icon: Bus },
+  { title: 'Clubs', url: '/admin/clubs', icon: Users },
+  { title: 'Support', url: '/admin/support', icon: HelpCircle },
+  { title: 'Reports', url: '/admin/reports', icon: FileBarChart },
   { title: 'Settings', url: '/admin/settings', icon: Settings },
 ];
 
@@ -98,7 +131,7 @@ export function AppSidebar() {
           {!collapsed && (
             <div>
               <h2 className="font-bold text-lg bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                AttendanceHub
+                EduTrack
               </h2>
               <p className="text-xs text-muted-foreground capitalize">
                 {profile?.role} Portal
