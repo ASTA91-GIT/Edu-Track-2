@@ -659,6 +659,39 @@ export type Database = {
           },
         ]
       }
+      profiles: {
+        Row: {
+          class: string | null
+          created_at: string | null
+          email: string | null
+          id: string
+          name: string
+          photo_url: string | null
+          role: string
+          updated_at: string | null
+        }
+        Insert: {
+          class?: string | null
+          created_at?: string | null
+          email?: string | null
+          id: string
+          name: string
+          photo_url?: string | null
+          role: string
+          updated_at?: string | null
+        }
+        Update: {
+          class?: string | null
+          created_at?: string | null
+          email?: string | null
+          id?: string
+          name?: string
+          photo_url?: string | null
+          role?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       student_transport: {
         Row: {
           academic_year: string
@@ -989,7 +1022,14 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_current_user_role: {
+        Args: Record<PropertyKey, never>
+        Returns: string
+      }
+      is_current_user_teacher: {
+        Args: { teacher_email: string }
+        Returns: boolean
+      }
     }
     Enums: {
       assignment_status: "pending" | "submitted" | "graded" | "returned"
