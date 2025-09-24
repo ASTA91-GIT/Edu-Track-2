@@ -1,121 +1,128 @@
-# 📊 EduTrack – Automated Student Attendance Monitoring & Analytics System
+# 🚀 EduTrack – Automated Student Attendance & Analytics System  
 
-## 📌 Problem Statement (SIH25016)
+![EduTrack Banner](https://via.placeholder.com/1200x300.png?text=EduTrack+-+Smart+Education)  
 
-**Title:** Automated Student Attendance Monitoring and Analytics System for Colleges  
-**Domain:** Smart Education  
-**Proposed by:** Government of Punjab
-
-The problem statement requires developing a **smart system** that automates student attendance monitoring and provides **analytics dashboards** for institutions, teachers, and students.
+## 📌 Overview  
+EduTrack is our solution for **Smart India Hackathon 2025** under the *Smart Education* theme.  
+It’s more than just an attendance tracker — **EduTrack unifies attendance, academic management, and analytics into a single, scalable platform**.  
 
 ---
 
-## 🚀 Solution Overview
-
-**EduTrack** is a web + mobile-based application designed to:
-
-* Automate attendance tracking using **digital logs / face recognition / QR codes**.
-* Provide **real-time analytics dashboards** for teachers, students, and administrators.
-* Minimize manual errors and save faculty time.
-* Enable data-driven insights for improving **student engagement**.
+## 🎯 Problem Statement  
+- Manual attendance is time-consuming, error-prone, and easily manipulated through proxy.  
+- Teachers lose valuable teaching time, while institutions lack transparency and real-time insights.  
 
 ---
 
-## 🛠️ Features
+## 💡 Our Solution  
+**EduTrack** automates attendance and empowers colleges with actionable data:  
 
-* ✅ **Student Attendance Automation** (QR/Face Recognition/ID swipe support)
-* 📊 **Analytics Dashboard** (attendance trends, defaulter lists, reports)
-* 👩‍🏫 **Faculty Panel** (mark attendance, view class summaries)
-* 🎓 **Student Panel** (check personal attendance, alerts for shortage)
-* 🔔 **Notifications & Alerts** (SMS/Email/App notifications for low attendance)
-* ☁️ **Cloud-based & Scalable** (works for multiple colleges/institutions)
-
----
-
-## 🏗️ Tech Stack
-
-### Frontend
-
-* HTML, CSS, JavaScript
-* React.js (for responsive dashboards)
-
-### Backend
-
-* Node.js / Java / Python Flask (depending on implementation)
-* REST APIs for communication
-
-### Database
-
-* MySQL (student records & attendance logs)
-
-### Additional Integrations
-
-* Face Recognition (OpenCV, Deep Learning models)
-* QR Code / RFID based scanning system
-* Cloud Hosting (AWS / Azure / GCP)
+- 📲 **Dynamic QR-Based Attendance** – secure, proxy-proof, instant logging.  
+- 📊 **Role-Based Dashboards** – separate views for students, teachers, and admins.  
+- ☁️ **Supabase-Powered Backend** – real-time sync, authentication, encrypted storage.  
+- 📈 **Analytics & Reports** – attendance trends, defaulters, performance insights.  
+- 🧾 **Integrated Services** – timetable, grades, fees, library, assignments, messaging.  
+- 📚 **Digital Library** – downloadable study materials & resources.  
+- 🏗️ **Scalable & Cloud-Ready** – built with modern, serverless architecture.  
 
 ---
 
-## 📊 Architecture (High-Level)
-
-1. **Data Collection Layer** → Attendance captured via QR / Face Recognition / RFID.
-2. **Backend API Layer** → Processes attendance data, stores in DB.
-3. **Database Layer** → Stores student profiles, attendance logs, analytics data.
-4. **Frontend Dashboard** → Displays analytics & insights to stakeholders.
-
----
-
-## 🧑‍🤝‍🧑 Target Users
-
-* **Students** → Track attendance & get alerts.
-* **Faculty** → Simplify attendance marking & reporting.
-* **Administration** → Monitor trends, generate reports, ensure compliance.
+## 🛠️ Tech Stack  
+**Frontend:** React (Vite) + TypeScript + TailwindCSS + ShadCN/UI  
+**Backend & DB:** Supabase (Auth + Postgres)  
+**Deployment:** Vercel  
+**Tools:** GitHub, VS Code  
+**Hardware:** Smartphones (QR scanning), Teacher’s PC/Laptop  
 
 ---
 
-## 📈 Expected Impact
+## ⚙️ Features  
 
-* 📉 **90% reduction** in manual effort for attendance tracking.
-* ⏱️ **Real-time insights** into class engagement.
-* 🎯 **Data-driven decision-making** for academic performance monitoring.
+### ✅ Completed  
+- Full database with RLS (row-level security).  
+- Authentication & role-based access.  
+- Teacher Dashboard: attendance, subject management, lecture scheduling.  
+- Admin Dashboard: CRUD for students, teachers, classes, subjects.  
+- Real-time statistics & analytics cards.  
+- Clean UI with responsive design, validation, and notifications.  
 
----
-
-## 🚀 Future Scope
-
-* Integration with **LMS (Learning Management Systems)**.
-* AI-powered **student engagement prediction models**.
-* Mobile app with **offline attendance sync**.
-
----
-
-## 👨‍💻 Team
-
-## 👨‍💻 Team
-
-**🚀 Team Name: Quantum Coders**
-**👥 Members:**
-
-**ASTA91-GIT**
-
-**Tanishk672006**
-
-**Purva2907**
-
-**Sakshi-kosbe**
-
-**swanandmuddewad**
-
-**sahilparte89**
+### 🚧 In Progress  
+- Timetable management.  
+- Reports & advanced analytics.  
+- Messaging system (announcements + queries).  
+- Digital library with downloadable books/resources.  
+- Assignments (upload, submit, grade).  
 
 ---
 
-## 📌 Status
-
-🔨 Currently in **prototype / development stage** for SIH 2025.
+## 🖥️ System Workflow  
+1. Teacher generates a dynamic QR → displayed in class.  
+2. Student scans QR → attendance recorded instantly in Supabase.  
+3. Data syncs in real-time → shown in dashboards.  
+4. Reports/alerts → help teachers and admins make decisions.  
 
 ---
 
-## 📜 License
+## 🌟 Impact & Benefits  
+- **Students:** Transparent records, fairness, quick access to academic info.  
+- **Teachers:** Hours saved, instant analytics, focus more on teaching.  
+- **Institutions:** Higher accountability, reduced errors, better engagement.  
+- **Wider:** Digital transformation in education, low-cost scalable solution.  
 
-This project is developed under **Smart India Hackathon 2025** guidelines.
+---
+
+## 📸 Screenshots (add later)  
+> Replace with actual dashboard/QR scan images for visual impact.  
+
+---
+
+## 🚀 Getting Started  
+
+```bash
+# Clone the repo
+git clone https://github.com/ASTA91-GIT/Edu-Track-2.git
+
+# Navigate into project
+cd Edu-Track-2
+
+# Install dependencies
+npm install
+
+# Set up environment variables for Supabase (see .env.example)
+
+# Run the dev server
+npm run dev
+```
+
+---
+
+## 📂 Project Structure  
+
+```
+EduTrack-2/
+├── src/               # React + TypeScript frontend
+├── public/            # Static assets (PDFs, icons, etc.)
+├── supabase/          # DB setup, policies
+├── package.json
+├── tailwind.config.ts
+└── README.md
+```
+
+---
+
+## 🔮 Future Roadmap  
+- AI-powered insights (predict defaulters, academic risks).  
+- Parent dashboards with real-time notifications.  
+- ERP/LMS integration via APIs.  
+- Mobile app version.  
+
+---
+
+## 👥 Team Quantum Coders  
+- **Ram Khandekar** – Team Leader / Full Stack Dev  
+- [Add other members here with roles]  
+
+---
+
+## 📜 License  
+MIT License. Free to use and adapt with credit.  
