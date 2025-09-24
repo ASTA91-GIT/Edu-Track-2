@@ -119,8 +119,12 @@ EduTrack-2/
 ---
 
 ## 👥 Team Quantum Coders  
-- **Ram Khandekar** – Team Leader / Full Stack Dev  
-- [Add other members here with roles]  
+- **Ram Khandekar** – Team Leader 
+- **Sahil Parte** - Front-end developer
+- **Tanishk Mohite** - Front - end Developer
+- **Sakshi Kosbe** - Database developer
+- **Swanand Muddewad** - Backend Developer
+- **Purva Patil** - Database developer & Pitcher 
 
 ---
 
