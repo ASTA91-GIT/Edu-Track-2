@@ -653,6 +653,44 @@ export type Database = {
           },
         ]
       }
+      library_access_logs: {
+        Row: {
+          accessed_at: string | null
+          action: string
+          book_id: string
+          id: string
+          ip_address: string | null
+          user_agent: string | null
+          user_id: string
+        }
+        Insert: {
+          accessed_at?: string | null
+          action: string
+          book_id: string
+          id?: string
+          ip_address?: string | null
+          user_agent?: string | null
+          user_id: string
+        }
+        Update: {
+          accessed_at?: string | null
+          action?: string
+          book_id?: string
+          id?: string
+          ip_address?: string | null
+          user_agent?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "library_access_logs_book_id_fkey"
+            columns: ["book_id"]
+            isOneToOne: false
+            referencedRelation: "library_books"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       library_books: {
         Row: {
           author: string
@@ -836,6 +874,114 @@ export type Database = {
           updated_at?: string | null
         }
         Relationships: []
+      }
+      qr_attendance_sessions: {
+        Row: {
+          class_id: string
+          created_at: string | null
+          end_time: string | null
+          id: string
+          is_active: boolean | null
+          location: string | null
+          qr_refresh_interval: number | null
+          session_id: string
+          start_time: string | null
+          subject_id: string
+          teacher_id: string
+        }
+        Insert: {
+          class_id: string
+          created_at?: string | null
+          end_time?: string | null
+          id?: string
+          is_active?: boolean | null
+          location?: string | null
+          qr_refresh_interval?: number | null
+          session_id: string
+          start_time?: string | null
+          subject_id: string
+          teacher_id: string
+        }
+        Update: {
+          class_id?: string
+          created_at?: string | null
+          end_time?: string | null
+          id?: string
+          is_active?: boolean | null
+          location?: string | null
+          qr_refresh_interval?: number | null
+          session_id?: string
+          start_time?: string | null
+          subject_id?: string
+          teacher_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "qr_attendance_sessions_class_id_fkey"
+            columns: ["class_id"]
+            isOneToOne: false
+            referencedRelation: "classes"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "qr_attendance_sessions_subject_id_fkey"
+            columns: ["subject_id"]
+            isOneToOne: false
+            referencedRelation: "subjects"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "qr_attendance_sessions_teacher_id_fkey"
+            columns: ["teacher_id"]
+            isOneToOne: false
+            referencedRelation: "Teachers Table"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      qr_scans: {
+        Row: {
+          id: string
+          ip_address: string | null
+          is_valid: boolean | null
+          qr_code_data: string
+          scan_timestamp: string | null
+          session_id: string
+          student_id: string
+          user_agent: string | null
+          validation_errors: string[] | null
+        }
+        Insert: {
+          id?: string
+          ip_address?: string | null
+          is_valid?: boolean | null
+          qr_code_data: string
+          scan_timestamp?: string | null
+          session_id: string
+          student_id: string
+          user_agent?: string | null
+          validation_errors?: string[] | null
+        }
+        Update: {
+          id?: string
+          ip_address?: string | null
+          is_valid?: boolean | null
+          qr_code_data?: string
+          scan_timestamp?: string | null
+          session_id?: string
+          student_id?: string
+          user_agent?: string | null
+          validation_errors?: string[] | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "qr_scans_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "qr_attendance_sessions"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       student_transport: {
         Row: {
