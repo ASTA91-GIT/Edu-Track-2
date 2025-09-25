@@ -42,28 +42,25 @@ import { useAuth } from '@/hooks/useAuth';
 const studentItems = [
   { title: 'Dashboard', url: '/student', icon: BarChart3 },
   { title: 'Fees', url: '/student/fees', icon: CreditCard },
-  { title: 'Assignments', url: '/student/assignments', icon: FileText },
+  { title: 'Assignments', url: '/assignments', icon: FileText },
   { title: 'Grades', url: '/student/grades', icon: Award },
-  { title: 'Timetable', url: '/student/timetable', icon: Calendar },
-  { title: 'Library', url: '/student/library', icon: BookOpen },
-  { title: 'Transport', url: '/student/transport', icon: Bus },
-  { title: 'Clubs', url: '/student/clubs', icon: Users },
-  { title: 'Messages', url: '/student/messages', icon: MessageSquare },
-  { title: 'Support', url: '/student/support', icon: HelpCircle },
+  { title: 'Timetable', url: '/timetable', icon: Calendar },
+  { title: 'Library', url: '/library', icon: BookOpen },
+  { title: 'Messages', url: '/messages', icon: MessageSquare },
   { title: 'QR Scanner', url: '/student/scanner', icon: QrCode },
 ];
 
 const teacherItems = [
   { title: 'Dashboard', url: '/teacher', icon: BarChart3 },
-  { title: 'Classes', url: '/teacher/classes', icon: BookOpen },
-  { title: 'Assignments', url: '/teacher/assignments', icon: FileText },
-  { title: 'Grades', url: '/teacher/grades', icon: Award },
-  { title: 'Tests', url: '/teacher/tests', icon: ClipboardList },
   { title: 'Attendance', url: '/teacher/attendance', icon: UserCheck },
-  { title: 'Timetable', url: '/teacher/timetable', icon: Calendar },
-  { title: 'Messages', url: '/teacher/messages', icon: MessageSquare },
-  { title: 'Reports', url: '/teacher/reports', icon: FileBarChart },
-  { title: 'QR Session', url: '/teacher/qr-session', icon: QrCode },
+  { title: 'Subjects', url: '/teacher/subjects', icon: GraduationCap },
+  { title: 'Lectures', url: '/teacher/lectures', icon: ClipboardList },
+  { title: 'QR Session', url: '/qr-session', icon: QrCode },
+  { title: 'Assignments', url: '/assignments', icon: FileText },
+  { title: 'Timetable', url: '/timetable', icon: Calendar },
+  { title: 'Library', url: '/library', icon: Library },
+  { title: 'Messages', url: '/messages', icon: MessageSquare },
+  { title: 'Reports', url: '/reports', icon: FileBarChart },
 ];
 
 const adminItems = [
@@ -71,14 +68,9 @@ const adminItems = [
   { title: 'User Management', url: '/admin/users', icon: Users },
   { title: 'Classes', url: '/admin/classes', icon: BookOpen },
   { title: 'Subjects', url: '/admin/subjects', icon: GraduationCap },
-  { title: 'Fees', url: '/admin/fees', icon: CreditCard },
-  { title: 'Events', url: '/admin/events', icon: Calendar },
-  { title: 'Announcements', url: '/admin/announcements', icon: Megaphone },
-  { title: 'Library', url: '/admin/library', icon: Library },
-  { title: 'Transport', url: '/admin/transport', icon: Bus },
-  { title: 'Clubs', url: '/admin/clubs', icon: Users },
-  { title: 'Support', url: '/admin/support', icon: HelpCircle },
-  { title: 'Reports', url: '/admin/reports', icon: FileBarChart },
+  { title: 'Library', url: '/library', icon: Library },
+  { title: 'Reports', url: '/reports', icon: FileBarChart },
+  { title: 'Messages', url: '/messages', icon: MessageSquare },
   { title: 'Settings', url: '/admin/settings', icon: Settings },
 ];
 

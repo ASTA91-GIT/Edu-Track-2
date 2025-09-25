@@ -14,6 +14,16 @@ import StudentAssignmentsPage from "./pages/student/StudentAssignmentsPage";
 import StudentGradesPage from "./pages/student/StudentGradesPage";
 import StudentLibraryPage from "./pages/student/StudentLibraryPage";
 import StudentTimetablePage from "./pages/student/StudentTimetablePage";
+import TeacherAttendancePage from "./pages/teacher/TeacherAttendancePage";
+import TeacherSubjectsPage from "./pages/teacher/TeacherSubjectsPage";
+import TeacherLecturesPage from "./pages/teacher/TeacherLecturesPage";
+import AdminDashboardPage from "./pages/admin/AdminDashboardPage";
+import TimetablePage from "./pages/TimetablePage";
+import ReportsPage from "./pages/ReportsPage";
+import MessagesPage from "./pages/MessagesPage";
+import LibraryPage from "./pages/LibraryPage";
+import QRSessionPage from "./pages/QRSessionPage";
+import AssignmentsPage from "./pages/AssignmentsPage";
 import DashboardLayout from "./components/layout/DashboardLayout";
 import { useAuth } from "./hooks/useAuth";
 
@@ -33,18 +43,16 @@ function AppContent() {
     );
   }
 
+  // Show landing page if no user and not on auth route
   if (!user) {
-    return <AuthPage />;
+    return (
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/auth" element={<AuthPage />} />
+        <Route path="*" element={<Index />} />
+      </Routes>
+    );
   }
-
-  // Role-based routing
-  const getDefaultRoute = () => {
-    switch (profile?.role) {
-      case 'teacher': return '/teacher';
-      case 'admin': return '/admin';
-      default: return '/student';
-    }
-  };
 
   return (
     <DashboardLayout>
@@ -52,31 +60,45 @@ function AppContent() {
         <Route path="/" element={
           profile?.role === 'student' ? <StudentDashboard /> :
           profile?.role === 'teacher' ? <TeacherDashboard /> :
+          profile?.role === 'admin' ? <AdminDashboardPage /> :
           <StudentDashboard />
         } />
         
         {/* Student Routes */}
         <Route path="/student" element={<StudentDashboard />} />
         <Route path="/student/fees" element={<StudentFeesPage />} />
-        <Route path="/student/assignments" element={<StudentAssignmentsPage />} />
+        <Route path="/student/assignments" element={<AssignmentsPage />} />
         <Route path="/student/grades" element={<StudentGradesPage />} />
-        <Route path="/student/timetable" element={<StudentTimetablePage />} />
-        <Route path="/student/library" element={<StudentLibraryPage />} />
+        <Route path="/student/timetable" element={<TimetablePage />} />
+        <Route path="/student/library" element={<LibraryPage />} />
+        <Route path="/student/messages" element={<MessagesPage />} />
         <Route path="/student/scanner" element={<QRScannerPage />} />
-        <Route path="/student/attendance" element={<StudentDashboard />} />
         
         {/* Teacher Routes */}
         <Route path="/teacher" element={<TeacherDashboard />} />
-        <Route path="/teacher/create-session" element={<TeacherDashboard />} />
-        <Route path="/teacher/classes" element={<TeacherDashboard />} />
-        <Route path="/teacher/attendance" element={<TeacherDashboard />} />
+        <Route path="/teacher/attendance" element={<TeacherAttendancePage />} />
+        <Route path="/teacher/subjects" element={<TeacherSubjectsPage />} />
+        <Route path="/teacher/lectures" element={<TeacherLecturesPage />} />
+        <Route path="/teacher/assignments" element={<AssignmentsPage />} />
+        <Route path="/teacher/timetable" element={<TimetablePage />} />
+        <Route path="/teacher/library" element={<LibraryPage />} />
+        <Route path="/teacher/messages" element={<MessagesPage />} />
+        <Route path="/teacher/reports" element={<ReportsPage />} />
+        <Route path="/teacher/qr-session" element={<QRSessionPage />} />
         
         {/* Admin Routes */}
-        <Route path="/admin" element={<TeacherDashboard />} />
-        <Route path="/admin/users" element={<TeacherDashboard />} />
-        <Route path="/admin/classes" element={<TeacherDashboard />} />
-        <Route path="/admin/reports" element={<TeacherDashboard />} />
-        <Route path="/admin/settings" element={<TeacherDashboard />} />
+        <Route path="/admin" element={<AdminDashboardPage />} />
+        <Route path="/admin/library" element={<LibraryPage />} />
+        <Route path="/admin/reports" element={<ReportsPage />} />
+        <Route path="/admin/messages" element={<MessagesPage />} />
+        
+        {/* Shared Routes */}
+        <Route path="/assignments" element={<AssignmentsPage />} />
+        <Route path="/timetable" element={<TimetablePage />} />
+        <Route path="/library" element={<LibraryPage />} />
+        <Route path="/messages" element={<MessagesPage />} />
+        <Route path="/reports" element={<ReportsPage />} />
+        <Route path="/qr-session" element={<QRSessionPage />} />
         
         {/* Catch-all */}
         <Route path="*" element={<NotFound />} />

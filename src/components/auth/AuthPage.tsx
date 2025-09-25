@@ -6,7 +6,9 @@ import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useAuth } from '@/hooks/useAuth';
-import { GraduationCap, Users, Shield } from 'lucide-react';
+import { GraduationCap, Users, Shield, ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import RoleSelector from './RoleSelector';
 
 export default function AuthPage() {
   const [signInEmail, setSignInEmail] = useState('');
@@ -48,19 +50,44 @@ export default function AuthPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-accent/10 to-primary/5 p-4">
-      <div className="w-full max-w-md">
-        <div className="text-center mb-8">
-          <div className="mx-auto w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-4 shadow-lg">
-            <GraduationCap className="h-8 w-8 text-primary-foreground" />
+    <div className="min-h-screen bg-gradient-to-br from-background via-accent/10 to-primary/5">
+      {/* Header */}
+      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-sm">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="flex h-16 items-center justify-between">
+            <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+              <ArrowLeft className="h-5 w-5 text-muted-foreground" />
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
+                  <GraduationCap className="h-5 w-5 text-white" />
+                </div>
+                <span className="font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  EduTrack
+                </span>
+              </div>
+            </Link>
+            
+            <div className="text-sm text-muted-foreground">
+              Smart Education Management
+            </div>
           </div>
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Student Attendance
-          </h1>
-          <p className="text-muted-foreground mt-2">
-            Automated monitoring system for colleges
-          </p>
         </div>
+      </header>
+
+      {/* Auth Content */}
+      <div className="flex items-center justify-center px-4 py-16">
+        <div className="w-full max-w-md">
+          <div className="text-center mb-8">
+            <div className="mx-auto w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-4 shadow-lg">
+              <GraduationCap className="h-8 w-8 text-primary-foreground" />
+            </div>
+            <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Welcome to EduTrack
+            </h1>
+            <p className="text-muted-foreground mt-2">
+              Smart Education Management System
+            </p>
+          </div>
 
         <Card className="shadow-2xl border-0 bg-card/80 backdrop-blur-sm">
           <Tabs defaultValue="signin" className="w-full">
@@ -158,37 +185,10 @@ export default function AuthPage() {
                       className="border-accent/20 focus:border-primary"
                     />
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="signup-role">Role</Label>
-                    <Select value={signUpRole} onValueChange={(value: 'student' | 'teacher' | 'admin') => setSignUpRole(value)}>
-                      <SelectTrigger className="border-accent/20 focus:border-primary">
-                        <div className="flex items-center gap-2">
-                          {getRoleIcon(signUpRole)}
-                          <SelectValue />
-                        </div>
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="student">
-                          <div className="flex items-center gap-2">
-                            <GraduationCap className="h-4 w-4" />
-                            Student
-                          </div>
-                        </SelectItem>
-                        <SelectItem value="teacher">
-                          <div className="flex items-center gap-2">
-                            <Users className="h-4 w-4" />
-                            Teacher
-                          </div>
-                        </SelectItem>
-                        <SelectItem value="admin">
-                          <div className="flex items-center gap-2">
-                            <Shield className="h-4 w-4" />
-                            Admin
-                          </div>
-                        </SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
+                    <RoleSelector 
+                      selectedRole={signUpRole} 
+                      onRoleChange={setSignUpRole} 
+                    />
                   {signUpRole === 'student' && (
                     <div className="space-y-2">
                       <Label htmlFor="signup-class">Class (Optional)</Label>
@@ -214,6 +214,7 @@ export default function AuthPage() {
             </TabsContent>
           </Tabs>
         </Card>
+        </div>
       </div>
     </div>
   );
